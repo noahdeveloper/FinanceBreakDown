@@ -1,0 +1,19 @@
+﻿@model FinanceBreakDown.Models.Income
+@{
+    ViewBag.Title = "IncomeName";
+}
+
+@using (Html.BeginForm())
+{
+    <div id="incomeName-form">
+        <div class="form-group">
+            <div>@Html.LabelFor(x => x.name)</div>
+            <div>@Html.TextBoxFor(x => x.name, new { @class = "form-control" })</div>
+            <div>@Html.ValidationMessageFor(x => x.name)</div>
+        </div>
+
+        <div><input type="submit" class="btn btn-primary" value="Ok" /></div>
+    </div>
+}
+
+@Scripts.Render("~/bundles/jqueryval")

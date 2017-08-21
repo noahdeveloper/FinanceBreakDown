@@ -1,0 +1,98 @@
+﻿@model FinanceBreakDown.Models.Person
+@{
+    ViewBag.Title = "Display";
+}
+
+<div id="finance-form">
+    <h2 id="finance-formTitle-label">Summary</h2>
+    <div>
+        You make $@Model.income.amount per month. <br />
+        You spend $@ViewBag.total in bills. <br />
+        You have $@ViewBag.Difference left after <br /> 
+        paying your bills for the week.
+    </div>
+</div>
+
+<div id="chartContainer" style="height: 300px; width: 95%; margin-top: 120px;"></div>
+<div id="chartContainer2" style="height: 250px; width: 100%; margin-top: 160px;"></div>
+
+
+@section scripts 
+{
+<script type="text/javascript">
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer",
+            {
+                title: {
+                    text: "Bills"
+                },
+                exportFileName: "Pie Chart",
+                exportEnabled: true,
+                animationEnabled: true,
+                legend: {
+                    verticalAlign: "bottom",
+                    horizontalAlign: "center"
+                },
+                data: [
+                    {
+                        type: "pie",
+                        showInLegend: true,
+                        toolTipContent: "{name}: <strong>{y}%</strong>",
+                        indexLabel: "{name} {y}%",
+                        dataPoints: [
+                            { y: @ViewBag.bill1, name: "@Model.bill[0].name", exploded: true },
+                            { y: @ViewBag.bill2, name: "@Model.bill[1].name", exploded: true  },
+                            { y: @ViewBag.bill3, name: "@Model.bill[2].name", exploded: true  },
+                            { y: @ViewBag.bill4, name: "@Model.bill[3].name", exploded: true  },
+                            { y: @ViewBag.bill5, name: "@Model.bill[4].name", exploded: true  },
+                            { y: @ViewBag.bill6, name: "@Model.bill[5].name", exploded: true  },
+                            { y: @ViewBag.bill7, name: "@Model.bill[6].name", exploded: true  }
+                        ]
+                    }
+                ]
+            });
+        chart.render();
+
+        var chart = new CanvasJS.Chart("chartContainer2", {
+
+            title: {
+                text: "Income Compared to Bills"
+
+            },
+            animationEnabled: true,
+            axisX: {
+                interval: 1,
+                gridThickness: 0,
+                labelFontSize: 10,
+                labelFontStyle: "normal",
+                labelFontWeight: "normal",
+                labelFontFamily: "Lucida Sans Unicode"
+
+            },
+            axisY2: {
+                interlacedColor: "rgba(1,77,101,.2)",
+                gridColor: "rgba(1,77,101,.1)"
+
+            },
+
+            data: [
+                {
+                    type: "bar",
+                    name: "income comapared to bill",
+                    axisYType: "secondary",
+                    color: "#014D65",
+                    dataPoints: [
+                        { y: @ViewBag.total, label: "Bills " },
+                        { y: @Model.income.amount, label: "@Model.income.name" }
+                    ]
+                }
+
+            ]
+        });
+
+        chart.render();
+
+    }
+</script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+}

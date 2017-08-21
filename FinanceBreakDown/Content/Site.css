@@ -1,0 +1,191 @@
+﻿body {
+    /*padding-top: 50px;*/
+    padding-bottom: 20px;
+    margin: 0px;
+    padding: 0px;
+    /*position: absolute;*/
+   overflow-y:auto;
+}
+
+/*html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 400px;
+}*/
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    /*padding-left: 15px;
+    padding-right: 15px;*/
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.field-validation-error {
+    color: red;
+}
+
+.btn-primary-custome {
+    color: black;
+    background-color: yellow;
+    border-color: #357ebd;
+    padding-bottom: 50px;
+    padding-right: 80px;
+    padding-top: 50px;
+    padding-left: 80px;
+}
+
+#index-title-label {
+    position: fixed;
+    left: 46%;
+    top: 70px;
+    transform: translate(-50%, -50%);
+}
+
+#index-go-actionlink {
+    position: fixed;
+    left: 46%;
+    top: 180px;
+    transform: translate(-50%, -50%);
+}
+
+#incomeName-form {
+    position: fixed;
+    left: 46%;
+    top: 115px;
+    transform: translate(-50%, -50%);
+}
+
+#incomeAmount-form {
+    position: fixed;
+    left: 46%;
+    top: 115px;
+    transform: translate(-50%, -50%);
+}
+
+#bill-form {
+    position: fixed;
+    left: 46%;
+    top: 265px;
+    transform: translate(-50%, -50%);
+}
+
+.text-box {
+    border: none;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#bill-ok-button {
+    margin-top:10px;
+}
+
+/*#finance-formTitle-label {
+    position: fixed;
+    left: 49%;
+    top: -48px;
+    transform: translate(-50%, -50%);
+}
+
+#finance-form {
+    position: fixed;
+    left: 46%;
+    top: 130px;
+    transform: translate(-50%, -50%);
+}*/
+
+#finance-formTitle-label {
+    margin-left:2%;
+    margin-bottom:2%;
+}
+
+#finance-form {
+    margin-left: 40%;
+}
+
+#bill-editfor-label {
+    pointer-events: none;
+}
+
+#bill-textbox-amount {
+    border-style: ridge;
+}
+
+@media screen and (max-width: 412px) and (min-width: 266px) {
+    #index-title-label {
+        margin-left: 5%;
+    }
+
+    #index-go-actionlink {
+        margin-left: 5%;
+        margin-top: -9%;
+    }
+
+    h3 {
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .btn-primary-custome {
+        color: black;
+        background-color: yellow;
+        border-color: #357ebd;
+        padding-bottom: 25px;
+        padding-right: 80px;
+        padding-top: 25px;
+        padding-left: 80px;
+    }
+}
+
+@media screen and (max-width: 465px) and (min-width: 250px) {
+    #bill-label-validation-span-0 {
+        display: none;
+    }
+
+    #bill-label-validation-span-1 {
+        display: none;
+    }
+
+    #bill-label-validation-span-2 {
+        display: none;
+    }
+
+    #bill-label-validation-span-3 {
+        display: none;
+    }
+
+    #bill-label-validation-span-4 {
+        display: none;
+    }
+
+    #bill-label-validation-span-5 {
+        display: none;
+    }
+
+    #bill-label-validation-span-6 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px) and (min-width: 250px) {
+    #finance-form {
+        /*background-color: red;*/
+        margin-left: 32%;
+    }
+}
+
+
+
+

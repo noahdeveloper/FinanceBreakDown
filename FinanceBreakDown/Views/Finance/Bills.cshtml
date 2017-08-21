@@ -1,0 +1,51 @@
+﻿@model FinanceBreakDown.Models.Person
+@{
+    ViewBag.Title = "Bills";
+}
+
+@using (Html.BeginForm("Display", "Finance"))
+{
+    <div id="bill-form">
+        
+        @for (int i = 0; i < Model.bill.Count(); ++i)
+        {
+            <div id="bill-editfor-label">@Html.EditorFor(m => m.bill[i].name)</div>
+            <span>@Html.TextBoxFor(m => m.bill[i].amount, new { @Value = "", @id = "bill-textbox-amount" })</span>
+            <span id="bill-label-validation-span-@i">@Html.ValidationMessageFor(m => m.bill[i].amount, "", new { @id = "bill-label-validation"})</span>
+        }
+
+        @Html.HiddenFor(x => x.income.name)
+        @Html.HiddenFor(x => x.income.amount)
+
+        <div id="bill-ok-button"><input type="submit" class="btn btn-primary" value="Ok" /></div>
+    </div>
+
+}
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            $(document).keydown(function (objEvent) {
+                if (objEvent.keyCode == 9) { 
+                    objEvent.preventDefault();
+                }
+            })
+
+            $('#bill-ok-button').click(function () {
+                $('#bill-form').css('top', "265px");
+            });
+
+            $('#bill-ok-button').click(function () {
+                var inVal = $(".bill-textbox-amount-class").val();
+
+                if (inVal.length == 0) {
+                    alert("textbox value can't be empty");
+                    $(".bill-textbox-amount-class").focus();
+                }
+            });
+
+        });
+    </script>
+}

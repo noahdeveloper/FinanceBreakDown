@@ -1,0 +1,18 @@
+﻿@model FinanceBreakDown.Models.Income
+@{
+    ViewBag.Title = "Income";
+}
+
+@using (Html.BeginForm("IncomeAmountPost", "Finance"))
+{
+    <div id="incomeAmount-form">
+        <div class="form-group">
+            <div>@Html.LabelFor(x => x.amount)</div>
+            <div>@Html.TextBoxFor(x => x.amount, new { @class = "form-control", @Value = ""})</div>
+            <div>@Html.ValidationMessageFor(x => x.amount)</div>
+        </div>
+
+        @Html.HiddenFor(x => x.name)
+        <div><input type="submit" class="btn btn-primary" value="Ok" /></div>
+    </div>
+}
