@@ -2,8 +2,12 @@
     ViewBag.Title = "Home Page";
 }
 
-<div id="index-title-label" class="fullscreen">
-    <h3>Finance Break Down</h3>
-</div>
+<div id="index-title-label" class="fullscreen">Finance Break Down</div>
 
 @Html.ActionLink("Go","IncomeName", "Finance", new { area = "" }, new { @class= "btn btn-primary-custome fullscreen", @id="index-go-actionlink" })
+
+@section scripts{
+    <script>
+
+    </script>    
+}

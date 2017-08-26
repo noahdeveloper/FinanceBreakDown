@@ -49,14 +49,15 @@ textarea {
 
 #index-title-label {
     position: fixed;
-    left: 46%;
+    left: 46.5%;
     top: 70px;
     transform: translate(-50%, -50%);
+    font-size: 18px;
 }
 
 #index-go-actionlink {
     position: fixed;
-    left: 46%;
+    left: 46.5%;
     top: 180px;
     transform: translate(-50%, -50%);
 }
@@ -78,7 +79,7 @@ textarea {
 #bill-form {
     position: fixed;
     left: 46%;
-    top: 265px;
+    top: 295px;
     transform: translate(-50%, -50%);
 }
 
@@ -186,6 +187,22 @@ textarea {
     }
 }
 
+@media screen and (max-width: 378px) and (min-width: 200px) {
+    #index-title-label {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 510px) and (min-width: 200px) {
+    #index-title-label {
+        left: 49%;
+    }
+
+    #index-go-actionlink {
+        left: 49%;
+    }
+
+}
 
 
 
